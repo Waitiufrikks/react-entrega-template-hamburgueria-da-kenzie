@@ -26,5 +26,11 @@ export const StyledEmptyCart = styled.div`
     color:var(--color-grey-50);
 
   }
-
+  @media (min-width: 768px){
+  .button--remove--all:hover{
+    color:var(--color-grey-0);
+    background:var(--color-grey-50);
+    transition:500ms;
+  }
+  }
 `

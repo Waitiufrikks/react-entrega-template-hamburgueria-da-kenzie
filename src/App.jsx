@@ -19,14 +19,15 @@ function App() {
   const [search, setSearch] = useState("");
 
   const searchProductList = productsList.filter((product) => {
-    return search === ""
-      ? true
-      : product.name.includes(search) 
+    return search === "" ? true : product.name.includes(search);
   });
 
-  const test = searchProductList.length == 0 ? productsList.filter((product) => {
-    return  product.category.includes(search) 
-  }) : searchProductList
+  const itemFilter =
+    searchProductList.length == 0
+      ? productsList.filter((product) => {
+          return product.category.includes(search);
+        })
+      : searchProductList;
 
   useEffect(() => {
     async function readProducts() {
@@ -55,10 +56,11 @@ function App() {
 
         <FieldSearch setSearch={setSearch} />
       </header>
-      {search && <span> Resultados para:{search}</span>}
-      <main className="container">
+      <main className="container"> 
+      {search && <span className="result--search"> Resultados para: <span>{search}</span></span>} 
+        <div className="content--container">
         <ProductList
-          searchProductList={test}
+          searchProductList={itemFilter}
           setCartProductsList={setCartProductsList}
           cartProductsList={cartProductsList}
         />
@@ -73,8 +75,13 @@ function App() {
             setCartProductsList={setCartProductsList}
           />
         </div>
+       </div>
       </main>
-      <ToastContainer limit={1} />
+      <ToastContainer
+       position="top-center"
+       autoClose={2000}
+       limit={3}
+        />
     </div>
   );
 }

@@ -15,22 +15,28 @@ export const StyleApp = createGlobalStyle`
 
   background: var(--color-grey-0);
 }
-
+.result--search{
+    padding: 0rem 2rem 2rem 0;
+    font-size:var(--title-size-1);
+    font-weight:600;
+      span{
+        color:var(--color-grey-20);
+      }
+  }
 .container {
-  
+  flex-direction: column;
   height: 100%;
   padding: 2rem 1rem 0 1rem;
 }
 .container--cart {
-  width: 100%;
+  max-width: 768px;
   min-height:225px;
-  background:var(--color-grey-0)
+  
   
 }
 .div--title--cart{
  
   height: 65px;
-  width: 100%;
 
   display: flex;
   justify-content: start;
@@ -45,6 +51,34 @@ export const StyleApp = createGlobalStyle`
   
   h2 {
     padding-left: 1rem;
+  }
+}
+@media(min-width: 768px){
+  .container--header{
+    flex-direction:row;
+    padding:0 90px 0 90px;
+  }
+ 
+   
+  .container{
+   
+    display:flex;
+    justify-content:center;
+    max-width:1440px;
+    margin: 0 auto;
+    
+  }
+  .container--cart{
+    width:40%;
+    max-height: 500px;
+    position:sticky;
+    top:10px;
+    
+  }
+  .content--container{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
   }
 }
 

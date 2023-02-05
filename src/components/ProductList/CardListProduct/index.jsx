@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import {StyledCardListProduct} from './style'
 
 export function Cards({
@@ -12,7 +13,7 @@ export function Cards({
   function handleSubmit(event) {
     const test = cartProductsList.some((element)=>{
         if(element.id == id){
-
+          toast.warning('AVISO: Por enquanto so pode 1 item de cada',{limit: 1})
           return element
         }
     })
@@ -40,7 +41,7 @@ export function Cards({
           <div className="info--item">
             <h2>{name}</h2>
             <span>{category}</span>
-            <span>R$ {price}</span>
+            <span>R$ {price.toFixed(2)}</span>
           </div>
           <button
             onClick={handleSubmit}

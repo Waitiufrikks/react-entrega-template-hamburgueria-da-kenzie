@@ -24,8 +24,10 @@ export const StyledCardCartList = styled.li`
   }
   .info--item{
     h2{
-      text-overflow: ellipsis
+      font-size:var(--text-size-2);
+      font-weight:600;
     }
+    
     display:flex;
     flex-direction:column;
     justify-content:space-around;
@@ -45,5 +47,14 @@ export const StyledCardCartList = styled.li`
     background:none;
 
     color:var(--color-grey-50);
+  }
+  @media (min-width: 768px){
+    width:100%;
+    min-height:80px;
+    
+    .button--remove--item:hover{
+    text-decoration:underline;
+  }
+
   }
   `

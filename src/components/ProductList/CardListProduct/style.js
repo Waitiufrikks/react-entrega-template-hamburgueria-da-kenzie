@@ -57,4 +57,13 @@ export const StyledCardListProduct = styled.li`
 
   background-color: var(--color-primary);
 }
+@media (min-width: 768px){
+ 
+  .button--add:hover{
+    
+    background:var(--color-primary-2);
+    transition:500ms;
+  }
+  
+}
 `

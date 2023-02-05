@@ -50,4 +50,11 @@ padding: 0 0.5rem 0 0.5rem;
   background: var(--color-primary);
 
 }
+@media (min-width: 768px){
+  .button--search:hover{
+    background:var(--color-primary-2);
+    transition:500ms;
+  }
+
+}
 `
