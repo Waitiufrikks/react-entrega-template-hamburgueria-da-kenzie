@@ -5,7 +5,7 @@ export function ProductList({
   setCartProductsList,
   cartProductsList,
 }) {
-  console.log(searchProductList)
+  
   return (
     <StyledListProduct>
       {searchProductList.map((product) => (
