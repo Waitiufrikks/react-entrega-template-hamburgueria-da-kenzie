@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 import { StyledEmptyCart } from "./style";
 
-export function CartValue({ productsCart, setCartProductsList }) {
+export function CartValue({ productsCart, setCartProductsList,children }) {
   const itemsPrices = productsCart.map((product) => {
     return product.price;
   });
@@ -17,6 +17,7 @@ export function CartValue({ productsCart, setCartProductsList }) {
         <span>R$ {somePrice.toFixed(2)}</span>
       </div>
       <button
+    
         onClick={() => {
           setCartProductsList([]);
           toast.success('Todos os produtos foram removidos')

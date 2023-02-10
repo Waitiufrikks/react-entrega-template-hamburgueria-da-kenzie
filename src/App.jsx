@@ -5,6 +5,7 @@ import { FieldSearch } from "./components/FieldSearch";
 import { ProductList } from "./components/ProductList";
 import { api } from "./service/api";
 
+import MaskGroup from "../src/assets/MaskGroup.svg"
 import "./styles/globalReset.js";
 import "./styles/globalStyles.js";
 import "react-toastify/dist/ReactToastify.min.css";
@@ -16,8 +17,9 @@ function App() {
   const [cartProductsList, setCartProductsList] = useState(
     localCart ? JSON.parse(localCart) : []
   );
-  const [search, setSearch] = useState("");
 
+  const [search, setSearch] = useState("");
+  
   const searchProductList = productsList.filter((product) => {
     return search === "" ? true : product.name.includes(search);
   });
@@ -52,7 +54,7 @@ function App() {
     <div className="App">
       <StyleApp />
       <header className="container--header">
-        <img src="../src/assets/Mask Group.svg" alt="Burger Kenzie" />
+        <img src={MaskGroup} alt="Burger Kenzie" />
 
         <FieldSearch setSearch={setSearch} />
       </header>

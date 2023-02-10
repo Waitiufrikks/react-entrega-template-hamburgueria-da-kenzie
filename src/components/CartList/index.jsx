@@ -26,7 +26,9 @@ export function ListCard({ cartItems, productsCart, setCartProductsList }) {
         <CartValue
         setCartProductsList={setCartProductsList}
         productsCart={productsCart}
-      />
+      >
+        
+        </CartValue>
       </>
       ) : (
           <EmptyCart/>

@@ -11,14 +11,14 @@ export function Cards({
   setCartProductsList,
 }) {
   function handleSubmit(event) {
-    const test = cartProductsList.some((element)=>{
-        if(element.id == id){
-          toast.warning('AVISO: Por enquanto so pode 1 item de cada',{limit: 1})
-          return element
+    const verificationProduct = cartProductsList.some((product)=>{
+        if(product.id == id){
+          toast.warning('AVISO: Por enquanto so pode 1 item de cada')
+          return product
         }
     })
     
-    if (!test) {
+    if (!verificationProduct) {
       const itemCart = {
         name: name,
         category: category,
